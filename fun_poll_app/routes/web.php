@@ -13,7 +13,8 @@
 
 Route::get('/', 'PoleController@index');
 
-Route::resource('poles', 'PoleController');
+Route::resource('/poles', 'PoleController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

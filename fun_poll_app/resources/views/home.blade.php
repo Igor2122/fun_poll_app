@@ -13,8 +13,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in!
+                    <div class="container">
+                        @include('_partials.createPoll')
+                    </div>
                 </div>
             </div>
         </div>

@@ -10,6 +10,8 @@ class Pole extends Model
     //
     public function options()
     {
-        return $this->hasMany('Option');
+        return $this->hasMany(Option::class);
     }
+
+
 }

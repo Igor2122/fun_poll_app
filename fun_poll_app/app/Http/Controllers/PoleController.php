@@ -27,10 +27,10 @@ class PoleController extends Controller
     public function index()
     {
         $poles = Pole::all();
-        $options = Option::all();
+        // $options = Option::all();
         
         $this->middleware('auth')->except('index');
-        return view('pages.home', compact(['poles', 'options']));
+        return view('pages.home', compact(['poles']));
     }
 
     /**
@@ -40,7 +40,8 @@ class PoleController extends Controller
      */
     public function create()
     {
-        //
+        $allPoles = Pole::all();
+        return view('pages.create', compact('allPoles'));
     }
 
     /**
@@ -51,7 +52,24 @@ class PoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $logged_in_user = \Auth::id();
+        $pole = new Pole;
+        $pole->title = $request->input('title');
+        $pole->user_id = $logged_in_user;
+        $pole->save();  
+
+        // dd($pole);
+
+        foreach ($request->input('option') as $option_value) {
+            $option = new Option;
+            $option->user_id = $logged_in_user;
+            $option->title = $option_value;
+            $option->pole_id = $pole->id;
+            $option->save();
+        }
+        
+
+        return redirect()->back();
     }
 
     /**

@@ -48995,6 +48995,16 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 var app = new Vue({
   el: '#app'
 });
+var addOption = document.querySelector('#add-option');
+var parentForm = document.querySelector('.add_pole_form');
+var counter = 1;
+addOption.addEventListener("click", function () {
+  counter++;
+  console.log(counter);
+  var option = document.createElement('div');
+  option.innerHTML = "\n        <div class=\"form-group\">\n            <label for=\"option-".concat(counter, "}\">Option Name</label>\n            <input name=\"option[").concat(counter, "}]\" type=\"text\" class=\"form-control\" id=\"option-").concat(counter, "}\" placeholder=\"Option Name\">\n        </div>\n    ");
+  parentForm.appendChild(option);
+});
 
 /***/ }),
 
