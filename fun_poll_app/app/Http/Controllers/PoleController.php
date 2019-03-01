@@ -27,14 +27,20 @@ class PoleController extends Controller
     public function index()
     {
         
+        $poles = Pole::all();
+            
+        $this->middleware('auth')->except('index');
+        return view('pages.home', compact(['poles']));
+    }
+
+    public function allpoles ()
+    {
         if(\Auth::id()){
             $poles = Pole::where('user_id', \Auth::id())->get();
         } else {
             $poles = Pole::all();
         }
-            
-        $this->middleware('auth')->except('index');
-        return view('pages.home', compact(['poles']));
+        return view('pages.adminView', compact('poles'));
     }
 
     /**

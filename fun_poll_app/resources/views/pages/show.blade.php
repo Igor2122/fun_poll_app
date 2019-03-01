@@ -28,7 +28,9 @@
                 @endphp
             @endforeach      
         </div>
-        <ul></ul>
+        
+        
+        
         @foreach($options as $option)
             @php
                 // $sum = $option->n_votes;
