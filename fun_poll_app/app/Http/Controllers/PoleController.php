@@ -26,9 +26,13 @@ class PoleController extends Controller
 
     public function index()
     {
-        $poles = Pole::all();
-        // $options = Option::all();
         
+        if(\Auth::id()){
+            $poles = Pole::where('user_id', \Auth::id())->get();
+        } else {
+            $poles = Pole::all();
+        }
+            
         $this->middleware('auth')->except('index');
         return view('pages.home', compact(['poles']));
     }
@@ -115,9 +119,10 @@ class PoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Pole $pole)
     {
-        //
+        $pole->delete();
+        return redirect()->back();
     }
     
  

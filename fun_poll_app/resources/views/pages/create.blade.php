@@ -11,9 +11,6 @@
 
     <div class="container">
             <div class="row">
-            {{-- @php
-                dd($allPoles)
-            @endphp --}}
                 @if (isset($allPoles))
                     @foreach ($allPoles as $pole)
                     <div class="col-sm-4">
@@ -25,7 +22,11 @@
                                         <li class="list-group-item">{{ $option->title }}</li>
                                         @endforeach 
                                     </ul>
-                                    <button class="btn btn-danger">Delete Pole</button>
+                                    <form action="{{ action('PoleController@destroy', $pole->id) }}" method="post">
+                                        @csrf
+                                        {{ method_field('DELETE') }}
+                                    <button value="submit" class="btn btn-danger">Delete Pole</button>
+                                </form>
                                 </div>
                             </div>
                         </div>
