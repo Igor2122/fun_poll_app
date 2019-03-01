@@ -11,9 +11,9 @@
 
     <div class="container">
             <div class="row">
-            @php
+            {{-- @php
                 dd($allPoles)
-            @endphp
+            @endphp --}}
                 @if (isset($allPoles))
                     @foreach ($allPoles as $pole)
                     <div class="col-sm-4">

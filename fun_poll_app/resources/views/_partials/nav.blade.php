@@ -16,9 +16,6 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ action('PoleController@create') }}">Create New</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ action('HomeController@index') }}">Admin Page</a>
-                            </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
