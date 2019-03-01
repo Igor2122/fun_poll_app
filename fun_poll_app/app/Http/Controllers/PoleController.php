@@ -38,7 +38,21 @@ class PoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $logged_in_user = \Auth::id();
+        $pole = new Pole;
+        $pole->title = $request->input('title');
+        $pole->user_id = $logged_in_user;
+        $pole->save();  
+
+        $option = new Option;
+        $option->user_id = $logged_in_user;
+        // dd($request->input('option-1'));
+        $option->title = $request->input('option-1');
+        $option->pole_id = 1;
+        $option->save();
+        
+
+        // return redirect()->back();
     }
 
     /**

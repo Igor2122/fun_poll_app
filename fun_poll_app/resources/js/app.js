@@ -1,4 +1,3 @@
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -31,3 +30,21 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app'
 });
+
+
+
+const addOption = document.querySelector('#add-option');
+const parentForm = document.querySelector('.add_pole_form');
+let counter = 1;
+addOption.addEventListener("click", () => {
+    counter++;
+    console.log(counter);
+    let option = document.createElement('div');
+    option.innerHTML = `
+        <div class="form-group">
+            <label for="option-${counter}}">Option Name</label>
+            <input name="option-${counter}}" type="text" class="form-control" id="option-${counter}}" placeholder="Option Name">
+        </div>
+    `;
+    parentForm.appendChild(option);
+})
