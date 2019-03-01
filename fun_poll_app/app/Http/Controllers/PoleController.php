@@ -41,6 +41,7 @@ class PoleController extends Controller
     public function create()
     {
         $allPoles = Pole::all();
+        dd($allPoles);
         return view('pages.create', compact('allPoles'));
     }
 
@@ -118,6 +119,6 @@ class PoleController extends Controller
     {
         //
     }
-
+    
  
 }

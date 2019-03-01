@@ -11,10 +11,13 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                           <li class="nav-item">
-                                <a class="nav-link active" href="{{ action('PoleController@index') }}">Home</a>
+                                <a class="nav-link" href="{{ action('PoleController@index') }}">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ action('PoleController@create') }}">Create New</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ action('HomeController@index') }}">Admin Page</a>
                             </li>
                     </ul>
 
