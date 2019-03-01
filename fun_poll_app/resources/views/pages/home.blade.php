@@ -17,7 +17,7 @@
                         @endforeach 
                     </ul>
                         <div class="card-body">
-                            <a href="{{ 'PoleController@show' }}" class="card-link">Go to vote</a>
+                            <a href="{{ action('PoleController@show', $pole->id) }}" class="card-link">Go to vote</a>
                     </div>
                 </div>
             </div>
