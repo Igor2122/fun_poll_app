@@ -81,7 +81,8 @@ class PoleController extends Controller
     public function show($id)
     {
         $pole = Pole::findOrFail($id);
-        return view('pages.show', compact('pole'));
+        $options = Option::where('pole_id', $id)->get();
+        return view('pages.show', compact('pole', 'options'));
     }
 
     /**
