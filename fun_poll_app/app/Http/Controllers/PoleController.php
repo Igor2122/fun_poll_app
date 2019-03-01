@@ -26,10 +26,11 @@ class PoleController extends Controller
 
     public function index()
     {
-        $data = Pole::all();
+        $poles = Pole::all();
+        $options = Option::all();
         
         $this->middleware('auth')->except('index');
-        return view('pages.home')->withData($data);
+        return view('pages.home', compact(['poles', 'options']));
     }
 
     /**
