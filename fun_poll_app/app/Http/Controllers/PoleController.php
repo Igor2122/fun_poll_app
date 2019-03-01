@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Option;
+use App\Pole;
+use App\User;
+
 class PoleController extends Controller
 {
     /**
