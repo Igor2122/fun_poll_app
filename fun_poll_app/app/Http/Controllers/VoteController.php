@@ -22,9 +22,7 @@ class VoteController extends Controller
             $vote->save();
             session()->flash('success', 'Your vote has been submitted!');
         };
-
-
-
+        
         return redirect()->action('PoleController@show', $id);
     }
 

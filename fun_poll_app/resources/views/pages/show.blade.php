@@ -5,7 +5,9 @@
 
     <h1> Poll detail </h1>
 
-    <div class="poll">
+
+    <h2> Pick wisely because you can vote here only once </h2>
+    <div class="card" style="width: 18rem;">
         <h2 class="poll-title">{{ $pole->title }}</h2>
         
      @foreach($options as $option)
