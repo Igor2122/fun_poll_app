@@ -49,7 +49,8 @@ class PoleController extends Controller
      */
     public function show($id)
     {
-        //
+        $pole = Pole::findOrFail($id);
+        return view('pages.show', compact('pole'));
     }
 
     /**
