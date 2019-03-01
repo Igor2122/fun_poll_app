@@ -21,6 +21,8 @@
 </head>
 <body>
     <div id="app">
+        @include('common/alerts')
+        @include('common/errors')
         @include('_partials.nav')
 
         <main class="py-4">
