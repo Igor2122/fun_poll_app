@@ -34,6 +34,7 @@ const app = new Vue({
 
 
 const addOption = document.querySelector('#add-option');
+console.log(addOption);
 const parentForm = document.querySelector('.add_pole_form');
 let counter = 1;
 addOption.addEventListener("click", () => {

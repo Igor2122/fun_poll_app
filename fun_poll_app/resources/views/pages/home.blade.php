@@ -11,11 +11,11 @@
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title h4">{{ $pole->title }}</h5>
-                    <ul class="list-group list-group-flush">
+                    {{-- <ul class="list-group list-group-flush">
                         @foreach ($pole->options as $option)
                             <li class="list-group-item">{{ $option->title }}</li>
                         @endforeach 
-                    </ul>
+                    </ul> --}}
                         <div class="card-body">
                             <a href="{{ action('PoleController@show', $pole->id) }}" class="card-link">Go to vote</a>
                     </div>
@@ -25,7 +25,7 @@
             @endforeach
     </div>
    
-    </div>
+</div>
 
 
 

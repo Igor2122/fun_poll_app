@@ -9,13 +9,11 @@
 
     <h2>See your all Poles</h2>
 
-    
     <div class="container">
             <div class="row">
                 @if (isset($allPoles))
                     @foreach ($allPoles as $pole)
                     <div class="col-sm-4">
-                        
                         <div class="card" style="width: 18rem;">
                                 <div class="card-body">
                                     <h5 class="card-title h4">{{ $pole->title }}</h5>
@@ -31,6 +29,7 @@
                         @endforeach
                     @endif
             </div>
-           
-            </div>
+        </div>
+            <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
 @endsection

@@ -48996,6 +48996,7 @@ var app = new Vue({
   el: '#app'
 });
 var addOption = document.querySelector('#add-option');
+console.log(addOption);
 var parentForm = document.querySelector('.add_pole_form');
 var counter = 1;
 addOption.addEventListener("click", function () {
