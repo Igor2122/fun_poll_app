@@ -12,24 +12,24 @@
     
     <div class="container">
             <div class="row">
+                @if (isset($allPoles))
                     @foreach ($allPoles as $pole)
                     <div class="col-sm-4">
-        
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title h4">{{ $pole->title }}</h5>
-                            <ul class="list-group list-group-flush">
-                                {{-- @foreach ($pole->options as $option)
-                                    <li class="list-group-item">{{ $option->title }}</li>
-                                @endforeach  --}}
-                            </ul>
+                        
+                        <div class="card" style="width: 18rem;">
                                 <div class="card-body">
-                                    {{-- <a href="{{ action('PoleController@' }}" class="card-link">Go to vote</a> --}}
+                                    <h5 class="card-title h4">{{ $pole->title }}</h5>
+                                    <ul class="list-group list-group-flush">
+                                        @foreach ($pole->options as $option)
+                                        <li class="list-group-item">{{ $option->title }}</li>
+                                        @endforeach 
+                                    </ul>
+                                    <button class="btn btn-danger">Delete Pole</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                    @endforeach
+                        @endforeach
+                    @endif
             </div>
            
             </div>
