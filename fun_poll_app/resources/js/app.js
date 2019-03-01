@@ -43,7 +43,7 @@ addOption.addEventListener("click", () => {
     option.innerHTML = `
         <div class="form-group">
             <label for="option-${counter}}">Option Name</label>
-            <input name="option-${counter}}" type="text" class="form-control" id="option-${counter}}" placeholder="Option Name">
+            <input name="option[${counter}}]" type="text" class="form-control" id="option-${counter}}" placeholder="Option Name">
         </div>
     `;
     parentForm.appendChild(option);

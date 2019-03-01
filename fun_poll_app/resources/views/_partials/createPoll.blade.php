@@ -6,7 +6,7 @@
     </div>
     <div class="form-group">
       <label for="option-1">Option Name</label>
-      <input name="option-1" type="text" class="form-control" id="option-1" placeholder="Option Name">
+      <input name="option[1]" type="text" class="form-control" id="option-1" placeholder="Option Name">
     </div>
     <div class="add_pole_form"></div>
     <div class="btn btn-primary" id="add-option">Add New Option</div>

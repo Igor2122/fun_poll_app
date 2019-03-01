@@ -27,7 +27,8 @@ class PoleController extends Controller
      */
     public function create()
     {
-        //
+        $allPoles = Pole::all();
+        return view('pages.create', compact('allPoles'));
     }
 
     /**
@@ -44,15 +45,18 @@ class PoleController extends Controller
         $pole->user_id = $logged_in_user;
         $pole->save();  
 
-        $option = new Option;
-        $option->user_id = $logged_in_user;
-        // dd($request->input('option-1'));
-        $option->title = $request->input('option-1');
-        $option->pole_id = 1;
-        $option->save();
+        // dd($pole);
+
+        foreach ($request->input('option') as $option_value) {
+            $option = new Option;
+            $option->user_id = $logged_in_user;
+            $option->title = $option_value;
+            $option->pole_id = $pole->id;
+            $option->save();
+        }
         
 
-        // return redirect()->back();
+        return redirect()->back();
     }
 
     /**

@@ -49002,7 +49002,7 @@ addOption.addEventListener("click", function () {
   counter++;
   console.log(counter);
   var option = document.createElement('div');
-  option.innerHTML = "\n        <div class=\"form-group\">\n            <label for=\"option-".concat(counter, "}\">Option Name</label>\n            <input name=\"option-").concat(counter, "}\" type=\"text\" class=\"form-control\" id=\"option-").concat(counter, "}\" placeholder=\"Option Name\">\n        </div>\n    ");
+  option.innerHTML = "\n        <div class=\"form-group\">\n            <label for=\"option-".concat(counter, "}\">Option Name</label>\n            <input name=\"option[").concat(counter, "}]\" type=\"text\" class=\"form-control\" id=\"option-").concat(counter, "}\" placeholder=\"Option Name\">\n        </div>\n    ");
   parentForm.appendChild(option);
 });
 
