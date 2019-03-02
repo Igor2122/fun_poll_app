@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Option;
 use App\Pole;
 use App\User;
+use App\Vote;
 
 class PoleController extends Controller
 {
@@ -20,7 +21,7 @@ class PoleController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except('index');
     }
 
 
@@ -28,8 +29,7 @@ class PoleController extends Controller
     {
         
         $poles = Pole::all();
-            
-        $this->middleware('auth')->except('index');
+
         return view('pages.home', compact(['poles']));
     }
 
@@ -93,7 +93,13 @@ class PoleController extends Controller
     {
         $pole = Pole::findOrFail($id);
         $options = Option::where('pole_id', $id)->get();
-        return view('pages.show', compact('pole', 'options'));
+        $iff = 0;
+        if (Vote::where([ 
+            ['user_id', '=', \Auth::id()],
+            ['pole_id', '=' ,$pole->id]])->count()) {
+                $iff = 1;
+            };
+        return view('pages.show', compact('pole', 'options', 'iff'));
     }
 
     /**

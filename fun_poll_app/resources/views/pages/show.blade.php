@@ -28,24 +28,24 @@
                 @endphp
             @endforeach      
         </div>
-        
-        
-        
-        @foreach($options as $option)
-            @php
-                // $sum = $option->n_votes;
-                if($option->n_votes > 0){
-                    $result = ($option->n_votes/$total)*100;
-                }else{
-                    $result = 0;
-                }
-            @endphp
-            <li class="list-group-item w-50 mx-auto">
-                <div class="progress">
-                        <div class="progress-bar bg-danger" role="progressbar" style="width: {{ $result}}%"  aria-valuemin="10" aria-valuemax="100">{{ $result }}% </div>
-                </div>
-            </li>
-        @endforeach
+        @if($iff == 1)
+            @foreach($options as $option)
+                @php
+                    // $sum = $option->n_votes;
+                    if($option->n_votes > 0){
+                        $result = ($option->n_votes/$total)*100;
+                    }else{
+                        $result = 0;
+                    }
+                @endphp
+                <li class="list-group-item w-50 mx-auto">
+                    <div class="progress">
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: {{ $result}}%"  aria-valuemin="10" aria-valuemax="100">{{ $result }}% </div>
+                    </div>
+                </li>
+            @endforeach
+             
+        @endif
     </div>
 
 @endsection
