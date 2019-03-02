@@ -7,9 +7,13 @@ use App\Vote;
 
 class OptionsController extends Controller
 {
-    public function vote (Request $request, $pole_id, $option_id)// , $pole_id, $option_id 
+    public function vote ($pole_id, $option_id)
     {
-        dd($pole_id, $option_id);
-        return 'hello';
+        // $vote = new Vote;
+        // $vote->user_id = \Auth::id();
+        // $vote->pole_id = $pole_id;
+        // $vote->save();
+        Vote::create(['user_id' => \Auth::id(),'pole_id' => $pole_id]);
+        return redirect()->back();
     }
 }
