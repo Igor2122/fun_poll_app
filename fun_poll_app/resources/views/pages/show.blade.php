@@ -6,7 +6,8 @@
 
     <div class="poll">
         <h2 class="poll_title">{{ $pole->title }}</h2>
-
+        
+        @include('_partials.poleView')
         
 
     </div>

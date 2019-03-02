@@ -20,7 +20,7 @@ class PoleController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except('index');
     }
 
 
@@ -29,7 +29,6 @@ class PoleController extends Controller
         $poles = Pole::all();
         // $options = Option::all();
         
-        $this->middleware('auth')->except('index');
         return view('pages.home', compact(['poles']));
     }
 
@@ -81,7 +80,8 @@ class PoleController extends Controller
     public function show($id)
     {
         $pole = Pole::findOrFail($id);
-        return view('pages.show', compact('pole'));
+        $options = $pole->options;
+        return view('pages.show', compact(['pole', 'options']));
     }
 
     /**

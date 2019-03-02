@@ -11,5 +11,7 @@
     <div class="add_pole_form"></div>
     <div class="btn btn-primary" id="add-option">Add New Option</div>
     <button type="submit" class="btn btn-primary">Submit</button>
-
   </form>
+
+  <!-- Scripts -->
+  <script src="{{ asset('js/app.js') }}" defer></script>
