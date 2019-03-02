@@ -15,7 +15,7 @@ class Pole extends Model
 
     public function user()
     {
-        return $this->belongsToMany('App\User','votes', 'pole_id', 'user_id')->withPivot('user_id', 'pole_id');; //, 
+        return $this->belongsToMany('App\User','votes');
     }
 
 
