@@ -15,7 +15,8 @@ Route::get('/', 'PoleController@index');
 
 Route::resource('/poles', 'PoleController');
 
-Route::post('options/{$id}/vote/{vote_id}', 'OptionsController@vote');
+// Route::post('options/{$id}/vote/{vote_id}', 'OptionsController@vote');
+Route::post('pole/{id}/vote/{vote_id}', 'OptionsController@vote');
 
 Auth::routes();
 

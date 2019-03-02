@@ -15,6 +15,7 @@
         @foreach ($options as $option)
             <form action="{{ action('OptionsController@vote', [$pole->id, $option->id ]) }}" method="POST">
               @csrf
+              {{--  --}}
               @if (count($showPole) === 0)
                 <button type="submit" class="btn btn-secondary poleButtons mx-2">{{ $option->title}}</button>
               @else
