@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class OptionsController extends Controller
 {
-    public function vote ($id)
+    public function vote ()
     {
-        dd($id);
+        return 'hello';
     }
 }

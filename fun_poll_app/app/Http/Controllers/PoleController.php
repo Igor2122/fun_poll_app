@@ -79,9 +79,15 @@ class PoleController extends Controller
      */
     public function show($id)
     {
+        
         $pole = Pole::findOrFail($id);
+
+        $user = User::find(\Auth::id());
+        
+        $showPole = $pole->user;
+        
         $options = $pole->options;
-        return view('pages.show', compact(['pole', 'options']));
+        return view('pages.show', compact(['pole', 'options', 'showPole']));
     }
 
     /**

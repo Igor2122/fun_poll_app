@@ -13,5 +13,10 @@ class Pole extends Model
         return $this->hasMany(Option::class);
     }
 
+    public function user()
+    {
+        return $this->belongsToMany('App\User','votes', 'pole_id', 'user_id')->withPivot('user_id', 'pole_id');; //, 
+    }
+
 
 }
